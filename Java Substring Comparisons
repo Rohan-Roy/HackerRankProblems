@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Solution {
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+  
+    public static String getSmallestAndLargest(String s, int k) {
+        String smallest = "";
+        String largest = "";
+        int n = s.length();
+        n = n - k + 1;
+        String[] str = new String[n];
+        int i = 0;
+        for(i=0;i<n;i++){
+            if(i<n-1)
+                str[i]=s.substring(i,i+k);
+            else
+                str[i]=s.substring(i);
+        }
+        smallest = largest = str[0];
+        // largest = str[0];
+        for(String tmp:str){
+            if(tmp.compareTo(smallest) < 0)
+                smallest = tmp;
+            if(tmp.compareTo(largest) > 0)
+                largest = tmp;
+        }
+        // Complete the function
+        // 'smallest' must be the lexicographically smallest substring of length 'k'
+        // 'largest' must be the lexicographically largest substring of length 'k'
+        
+        return smallest + "\n" + largest;
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.next();
+        int k = scan.nextInt();
+        scan.close();
+      
+        System.out.println(getSmallestAndLargest(s, k));
+    }
+}
