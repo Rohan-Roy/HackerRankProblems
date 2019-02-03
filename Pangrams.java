@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class Pangrams {
 
     // Complete the pangrams function below.
     static String pangrams(String s) {
